@@ -41,10 +41,7 @@
                       <i class='bx bx-user nav__icon' ></i>
                       <span class="nav__name">Users</span>
                     </a>
-                    <a href="index.php?page=siteManage" class="nav__link nav-siteManage">
-                      <i class="fas fa-cogs"></i>
-                      <span class="nav__name">Site Settings</span>
-                    </a>
+                
                 </div>
             </div>
             <a href="partials/_logout.php" class="nav__link">

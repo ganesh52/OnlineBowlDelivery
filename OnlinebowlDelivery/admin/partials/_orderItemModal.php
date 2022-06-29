@@ -55,7 +55,7 @@
                                                     <div class="p-2">
                                                     <img src="/OnlinebowlDelivery/img/bowl-'.$bowlId. '.jpg" alt="" width="70" class="img-fluid rounded shadow-sm">
                                                     <div class="ml-3 d-inline-block align-middle">
-                                                        <h5 class="mb-0"> '.$bowlName. '</h5><span class="text-muted font-weight-normal font-italic d-block">$. ' .$bowlPrice. '/-</span>
+                                                        <h5 class="mb-0"> '.$bowlName. '</h5><span class="text-muted font-weight-normal font-italic d-block">$ ' .$bowlPrice. '/-</span>
                                                     </div>
                                                     </div>
                                                 </th>
