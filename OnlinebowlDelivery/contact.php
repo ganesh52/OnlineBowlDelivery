@@ -192,8 +192,8 @@
                           </div>
                           <?php if($loggedin){ ?>
                             <div class="col-lg-12">
-                              <button type="submit" class="btn btn-danger-gradiant mt-3 mb-3 text-white border-0 py-2 px-3"><span> SUBMIT NOW <i class="ti-arrow-right"></i></span></button>
-                              <button type="button" class="btn btn-danger-gradiant mt-3 mb-3 text-white border-0 py-2 px-3 mx-2" data-toggle="modal" data-target="#history"><span> HISTORY <i class="ti-arrow-right"></i></span></button>
+                              <button type="submit" class="btn btn-primary my-2"><span> SUBMIT NOW <i class="ti-arrow-right"></i></span></button>
+                              <button type="button" class="btn btn-primary my-2" data-toggle="modal" data-target="#history"><span> HISTORY <i class="ti-arrow-right"></i></span></button>
                             </div>
                           <?php }else { ?>
                             <div class="col-lg-12">
