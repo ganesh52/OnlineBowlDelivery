@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group col-md-6 mb-0">
                         <b><label for="zipcode">Zip Code:</label></b>
-                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="xxxxxx" required pattern="[0-9]{6}" maxlength="6">                    
+                        <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="xxxxx" required pattern="[0-9]{5}" maxlength="5">                    
                     </div>
                 </div>
                 <div class="form-group">
