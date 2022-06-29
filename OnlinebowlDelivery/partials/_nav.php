@@ -15,13 +15,15 @@ $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 
 $systemName = isset($row['systemName']);
-
+require_once("C:/xampp/htdocs/OnlinebowlDelivery/style.css");
 echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.php">'.$systemName.'</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
+	<div class="imga">
+      		<span><img class="image imga" width =80 height=80 src="/OnlinebowlDelivery/img/logo1.jpg"/></span>
+	</div> 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -41,20 +43,16 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           </li>
           <li class="nav-item">
             <a class="nav-link" href="viewOrder.php">Your Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php">User Manual</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
           </li>
-          
+
         </ul>
         <form method="get" action="/OnlinebowlDelivery/search.php" class="form-inline my-2 my-lg-0 mx-3">
           <input class="form-control mr-sm-2" type="search" name="search" id="search" placeholder="Search" aria-label="Search" required>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>';
-
         $countsql = "SELECT SUM(`itemQuantity`) FROM `viewcart` WHERE `userId`=$userId"; 
         $countresult = mysqli_query($conn, $countsql);
         $countrow = mysqli_fetch_assoc($countresult);      

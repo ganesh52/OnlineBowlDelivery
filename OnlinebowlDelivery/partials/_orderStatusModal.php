@@ -140,10 +140,10 @@
             $deliveryDetailSql = "SELECT * FROM `deliverydetails` WHERE `orderId`= $orderid";
             $deliveryDetailResult = mysqli_query($conn, $deliveryDetailSql);
             $deliveryDetailRow = mysqli_fetch_assoc($deliveryDetailResult);
-            $trackId = $deliveryDetailRow['id'];
-            $deliveryBoyName = $deliveryDetailRow['deliveryBoyName'];
-            $deliveryBoyPhoneNo = $deliveryDetailRow['deliveryBoyPhoneNo'];
-            $deliveryTime = $deliveryDetailRow['deliveryTime'];
+            $trackId = isset($deliveryDetailRow['id']);
+            $deliveryBoyName = isset($deliveryDetailRow['deliveryBoyName']);
+            $deliveryBoyPhoneNo = isset($deliveryDetailRow['deliveryBoyPhoneNo']);
+            $deliveryTime = isset($deliveryDetailRow['deliveryTime']);
             if($status == 4)
                 $deliveryTime = 'xx';
         }
@@ -181,42 +181,42 @@
                             <div class="track">
                             <?php
                                 if($status == 0){
-                                      echo '<div class="step active">   </span> <span class="text">Order Placed</span> </div>
-                                            <div class="step">  </span> <span class="text">Order Confirmed</span> </div>
-                                            <div class="step">  </span> <span class="text"> Preparing your Order</span> </div>
-                                            <div class="step">  </span> <span class="text"> On the way </span> </div>
-                                            <div class="step">  </span> <span class="text">Order Delivered</span> </div>';
+                                      echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                            <div class="step"> <span class="icon"> <i class="fa fa-times"></i> </span> <span class="text">Order Confirmed</span> </div>
+                                            <div class="step"> <span class="icon"> <i class="fa fa-times"></i> </span> <span class="text"> Preparing your Order</span> </div>
+                                            <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                                            <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Order Delivered</span> </div>';
                                 }
                                 elseif($status == 1){
-                                    echo '<div class="step active">   </span> <span class="text">Order Placed</span> </div>
-                                          <div class="step active">   </span> <span class="text">Order Confirmed</span> </div>
-                                          <div class="step">  </span> <span class="text"> Preparing your Order</span> </div>
-                                          <div class="step">   </span> <span class="text"> On the way </span> </div>
-                                          <div class="step">  </span> <span class="text">Order Delivered</span> </div>';
+                                    echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Confirmed</span> </div>
+                                          <div class="step"> <span class="icon"> <i class="fa fa-times"></i> </span> <span class="text"> Preparing your Order</span> </div>
+                                          <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                                          <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Order Delivered</span> </div>';
                                 }
                                 elseif($status == 2){
-                                    echo '<div class="step active">  </span> <span class="text">Order Placed</span> </div>
-                                          <div class="step active">   </span> <span class="text">Order Confirmed</span> </div>
-                                          <div class="step active">   </span> <span class="text"> Preparing your Order</span> </div>
-                                          <div class="step">  <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
-                                          <div class="step">  </span> <span class="text">Order Delivered</span> </div>';
+                                    echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Confirmed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Preparing your Order</span> </div>
+                                          <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
+                                          <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Order Delivered</span> </div>';
                                 }
                                 elseif($status == 3){
-                                    echo '<div class="step active">   </span> <span class="text">Order Placed</span> </div>
-                                          <div class="step active"> <span class="icon">  </span> <span class="text">Order Confirmed</span> </div>
-                                          <div class="step active"> <span class="icon">  </span> <span class="text"> Preparing your Order</span> </div>
+                                    echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Confirmed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Preparing your Order</span> </div>
                                           <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
                                           <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Order Delivered</span> </div>';
                                 }
                                 elseif($status == 4){
-                                    echo '<div class="step active">   </span> <span class="text">Order Placed</span> </div>
-                                          <div class="step active"> <span class="icon">  </span> <span class="text">Order Confirmed</span> </div>
+                                    echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                          <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Confirmed</span> </div>
                                           <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text"> Preparing your Order</span> </div>
                                           <div class="step active"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> On the way </span> </div>
                                           <div class="step active"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Order Delivered</span> </div>';
                                 } 
                                 elseif($status == 5){
-                                    echo '<div class="step active">  <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
+                                    echo '<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Order Placed</span> </div>
                                           <div class="step deactive"> <span class="icon"> <i class="fa fa-times"></i> </span> <span class="text">Order Denied.</span> </div>';
                                 }
                                 else {

@@ -1,0 +1,7 @@
+/*Logo*/
+.navbar a.logo{
+  display:block;
+  width: 300px;
+  height: 200px;
+  background: url(img/image.png) 0 0 no-repeat;
+}
