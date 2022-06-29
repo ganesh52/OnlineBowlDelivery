@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <title>Home</title>
-    <link rel = "icon" href ="img/logo.jpg" type = "image/x-icon">
+    <link rel = "icon" href ="/OnlinebowlDelivery/img/logo1.jpg" type = "image/x-icon">
   </head>
 <body>
   <?php include 'partials/_dbconnect.php';?>
@@ -18,9 +18,7 @@
   <!-- Category container starts here -->
   <div class="container my-3 mb-5">
     <div class="col-lg-2 text-center bg-light my-3" style="margin:auto;border-top: 2px groove black;border-bottom: 2px groove black;">     
-      <h2 class="text-center">Menu
-         Deal 
-      Buy 2 and get 2 </h2>
+      <h2 class="text-center">Menu </h2>
     </div>
     <div class="row">
       <!-- Fetch all the categories and use a loop to iterate through categories -->
@@ -35,9 +33,9 @@
                   <div class="card" style="width: 18rem;">
                     <img src="img/card-'.$id. '.jpg" class="card-img-top" alt="image for this category" width="249px" height="270px">
                     <div class="card-body">
-                     
-                     
-                      <a href="viewbowlList.php?catid=' . $id . '" class="btn btn-primary">View All iteams You want to look for</a>
+                      <h5 class="card-title"><a href="viewbowlList.php?catid=' . $id . '">' . $cat . '</a></h5>
+                      <p class="card-text">' . substr($desc, 0, 30). ' </p>
+                      <a href="viewbowlList.php?catid=' . $id . '" class="btn btn-primary">View All</a>
                     </div>
                   </div>
                 </div>';
