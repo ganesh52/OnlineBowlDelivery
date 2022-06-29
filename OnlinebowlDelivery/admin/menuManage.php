@@ -10,8 +10,14 @@
 						Create New Item
 				  	</div>
 					<div class="card-body">
-							
-							
+							<div class="form-group">
+								<label class="control-label">Name: </label>
+								<input type="text" class="form-control" name="name" required>
+							</div>
+							<div class="form-group">
+								<label class="control-label">Description: </label>
+								<textarea cols="30" rows="3" class="form-control" name="description" required></textarea>
+							</div>
                             <div class="form-group">
 								<label class="control-label">Price</label>
 								<input type="number" class="form-control" name="price" required min="1">
@@ -81,7 +87,8 @@
                                                 <img src="/OnlinebowlDelivery/img/bowl-'.$bowlId. '.jpg" alt="image for this item" width="150px" height="150px">
                                             </td>
                                             <td>
-                                                
+                                                <p>Name : <b>' .$bowlName. '</b></p>
+                                                <p>Description : <b class="truncate">' .$bowlDesc. '</b></p>
                                                 <p>Price : <b>' .$bowlPrice. '</b></p>
                                             </td>
                                             <td class="text-center">
@@ -143,8 +150,24 @@
 			</div>
 		</form>
 		<form action="partials/_menuManage.php" method="post">
-            
-			
+            <div class="text-left my-2">
+                <b><label for="name">Name</label></b>
+                <input class="form-control" id="name" name="name" value="<?php echo $bowlName; ?>" type="text" required>
+            </div>
+			<div class="text-left my-2 row">
+				<div class="form-group col-md-6">
+                	<b><label for="price">Price</label></b>
+                	<input class="form-control" id="price" name="price" value="<?php echo $bowlPrice; ?>" type="number" min="1" required>
+				</div>
+				<div class="form-group col-md-6">
+					<b><label for="catId">Category Id</label></b>
+                	<input class="form-control" id="catId" name="catId" value="<?php echo $bowlCategorieId; ?>" type="number" min="1" required>
+				</div>
+            </div>
+            <div class="text-left my-2">
+                <b><label for="desc">Description</label></b>
+                <textarea class="form-control" id="desc" name="desc" rows="2" required minlength="6"><?php echo $bowlDesc; ?></textarea>
+            </div>
             <input type="hidden" id="bowlId" name="bowlId" value="<?php echo $bowlId; ?>">
             <button type="submit" class="btn btn-success" name="updateItem">Update</button>
         </form>

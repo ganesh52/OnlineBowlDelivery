@@ -12,7 +12,7 @@
     }
 </style>
 <div style="margin-right: 32px;display: table;margin-left: auto;">
-<button type="button" class="btn btn-danger-gradiant text-white border-0 py-2 px-3 mx-2" data-toggle="modal" data-target="#history"><span> HISTORY <i class="ti-arrow-right"></i></span></button>
+<button type="button" class="btn btn-primary my-2" data-toggle="modal" data-target="#history"><span> HISTORY <i class="ti-arrow-right"></i></span></button>
 </div>
 <div class="container-fluid" id='empty'>	
 	<div class="row">

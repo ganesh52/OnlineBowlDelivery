@@ -3,11 +3,11 @@
                     $result = mysqli_query($conn, $sql);
                     $row = mysqli_fetch_assoc($result);
 
-                    $systemName = $row['systemName'];
-                    $address = $row['address'];
-                    $email = $row['email'];
-                    $contact1 = $row['contact1'];
-                    $contact2 = $row['contact2'];
+                    $systemName = isset($row['systemName']);
+                    $address = isset($row['address']);
+                    $email = isset($row['email']);
+                    $contact1 = isset($row['contact1']);
+                    $contact2 = isset($row['contact2']);
 
 echo '<div class="container-fluid" style="padding-left: 470px;margin-top:98px">
 	<div class="card col-lg-6 p-0">

@@ -7,7 +7,15 @@
                         <div class="card-header" style="background-color: rgb(111 202 203);">
                             Create New Category
                         </div>
-                       
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label class="control-label">Category Name: </label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Category Desc: </label>
+                                <input type="text" class="form-control" name="desc" required>
+                            </div> 
                             <div class="form-group">
 								<label for="image" class="control-label">Image</label>
 								<input type="file" name="image" id="image" accept=".jpg" class="form-control" required style="border:none;">
@@ -33,7 +41,7 @@
                         <tr>
                             <th class="text-center" style="width:7%;">Id</th>
                             <th class="text-center">Img</th>
-                         
+                            <th class="text-center" style="width:58%;">Category Detail</th>
                             <th class="text-center" style="width:18%;">Action</th>
                         </tr>
                         </thead>
@@ -44,12 +52,15 @@
                             while($row = mysqli_fetch_assoc($result)){
                                 $catId = $row['categorieId'];
                                 $catName = $row['categorieName'];
-                                
+                                $catDesc = $row['categorieDesc'];
 
                                 echo '<tr>
                                         <td class="text-center"><b>' .$catId. '</b></td>
                                         <td><img src="/OnlinebowlDelivery/img/card-'.$catId. '.jpg" alt="image for this Category" width="150px" height="150px"></td>
-                                        
+                                        <td>
+                                            <p>Name : <b>' .$catName. '</b></p>
+                                            <p>Description : <b class="truncate">' .$catDesc. '</b></p>
+                                        </td>
                                         <td class="text-center">
                                             <div class="row mx-auto" style="width:112px">
                                             <button class="btn btn-sm btn-primary edit_cat" type="button" data-toggle="modal" data-target="#updateCat' .$catId. '">Edit</button>
@@ -107,7 +118,14 @@
 			</div>
 		</form>
         <form action="partials/_categoryManage.php" method="post">
-           
+            <div class="text-left my-2">
+                <b><label for="name">Name</label></b>
+                <input class="form-control" id="name" name="name" value="<?php echo $catName; ?>" type="text" required>
+            </div>
+            <div class="text-left my-2">
+                <b><label for="desc">Description</label></b>
+                <textarea class="form-control" id="desc" name="desc" rows="2" required minlength="6"><?php echo $catDesc; ?></textarea>
+            </div>
             <input type="hidden" id="catId" name="catId" value="<?php echo $catId; ?>">
             <button type="submit" class="btn btn-success" name="updateCategory">Update</button>
         </form>
